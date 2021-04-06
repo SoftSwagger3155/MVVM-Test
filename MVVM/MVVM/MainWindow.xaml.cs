@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVM.Helper;
 
 namespace MVVM
 {
@@ -25,5 +26,11 @@ namespace MVVM
             InitializeComponent();
         }
 
+      
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainManager mmgr = new MainManager();
+            ctrlPerson.Setup(mmgr.PersonViewModel);
+        }
     }
 }

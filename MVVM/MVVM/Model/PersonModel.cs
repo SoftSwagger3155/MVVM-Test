@@ -58,6 +58,13 @@ namespace MVVM.Model
             get { return this.IsPensionQualified ? "Qualified" : "Not-Qualified"; }
         }
 
+        List<PersonModel> personModels = new List<PersonModel>();
+        public List<PersonModel>PersonModels
+        {
+            get { return personModels; }
+            set { personModels = value; }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string info)
         {

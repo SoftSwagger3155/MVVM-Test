@@ -8,6 +8,8 @@ using MVVM.Command;
 using MVVM.Model;
 using System.ComponentModel;
 using System.Windows;
+using MVVM.Helper;
+using System.IO;
 
 namespace MVVM.ViewModel
 {
@@ -15,21 +17,17 @@ namespace MVVM.ViewModel
     {
         private PersonModel model = null;
         private ICommand _doSomething;
+        private ICommand _doSave;
         private int input_Age;
 
 
         public PersonModel Model
         {
             get { return model; }
-            set { model = value;
-                OnPropertyChanged(nameof(Model));
-            }
         }
-        public PersonViewModel()
+        public PersonViewModel(PersonModel model)
         {
-            this.model = new PersonModel();
-            this.model.Name = "Stanley";
-            this.model.Age = 61;
+            this.model = model;
         }
 
 
@@ -47,12 +45,12 @@ namespace MVVM.ViewModel
                 if (_doSomething == null)
                 {
                     _doSomething = new RelayCommand(
-                        p => Model.Age > 0,
+                        p => model.Age > 0,
                         p => {
                             if (Input_Age < 0)
                                 MessageBox.Show("Age must be above 0");
                             else
-                                this.Model.Age = this.Input_Age;
+                                this.model.Age = this.Input_Age;
                         }
                         );
                 }
@@ -62,6 +60,29 @@ namespace MVVM.ViewModel
             {
                 _doSomething = value;
                 OnPropertyChanged(nameof(DoSomethingCommand));
+            }
+        }
+
+        public ICommand DoSaveCommand
+        {
+            get
+            {
+                if (_doSave == null)
+                {
+                    _doSave = new RelayCommand(
+                        p => true,
+                        p => {
+                            string path = MainManager.path +"\\"+"PersonModel.xml"; 
+                            XmlHelper.SaveXml(typeof(PersonModel), this.Model, path);
+                        }
+                        );
+                }
+                return _doSave;
+            }
+            set
+            {
+                _doSave = value;
+                OnPropertyChanged(nameof(DoSaveCommand));
             }
         }
 

@@ -55,7 +55,7 @@
                 Command="{Binding DoSomethingCommand, UpdateSourceTrigger=PropertyChanged}"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="263,186,0,0" 
+                Margin="263,157,0,0" 
                 Height="32" 
                 Width="112"/>
         <TextBox x:Name="_tbx_Age"
@@ -65,6 +65,14 @@
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Center"
                  Height="30"
-                 Width="100" Margin="158,188,0,0"/>
+                 Width="100" Margin="158,159,0,0"/>
+        <Button x:Name="_btn_AgeChange_Copy"
+            Content="Save"
+            Command="{Binding DoSaveCommand, UpdateSourceTrigger=PropertyChanged}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="263,194,0,0" 
+            Height="32" 
+            Width="112"/>
     </Grid>
 </UserControl>

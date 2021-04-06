@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Helper\MainManager.cs" />
+    <Compile Include="Helper\XmlHelper.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="View\CtrlPerson.xaml.cs">
       <DependentUpon>CtrlPerson.xaml</DependentUpon>

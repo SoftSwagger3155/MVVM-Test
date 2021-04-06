@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MVVM"
         xmlns:view="clr-namespace:MVVM.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <view:CtrlPerson x:Name="ctrlPerson" 
                          VerticalAlignment="Top"

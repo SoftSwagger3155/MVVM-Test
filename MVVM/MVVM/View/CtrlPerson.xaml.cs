@@ -26,11 +26,17 @@ namespace MVVM.View
             InitializeComponent();
         }
 
-        PersonViewModel vmPerson = null;
+        PersonViewModel vmModel = null;
+        public void Setup(PersonViewModel vmModel)
+        {
+            this.vmModel = vmModel;
+            this.DataContext = vmModel;
+        }
+
+      
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            this.vmPerson = new PersonViewModel();
-            this.DataContext = vmPerson;
+            
         }
     }
 }
