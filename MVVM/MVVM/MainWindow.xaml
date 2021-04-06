@@ -10,7 +10,7 @@
     <Grid>
         <view:CtrlPerson x:Name="ctrlPerson" 
                          VerticalAlignment="Top"
-                         HorizontalAlignment="Left" Height="218" Width="418"/>
+                         HorizontalAlignment="Left" Height="233" Width="391" Background="LightBlue" Margin="27,29,0,0"/>
 
     </Grid>
 </Window>
