@@ -15,7 +15,7 @@
                Height="30"
                Width="120" Margin="43,43,0,0"/>
         <Label x:Name="_lbl_Name"
-               Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+               Content="{Binding Model.Name, UpdateSourceTrigger=PropertyChanged}"
                VerticalAlignment="Top"
                HorizontalAlignment="Left"
                HorizontalContentAlignment="Left"
@@ -29,7 +29,7 @@
             Height="30"
             Width="120" Margin="43,73,0,0"/>
         <Label x:Name="_lbl_Age"
-              Content="{Binding Age, UpdateSourceTrigger=PropertyChanged}"
+              Content="{Binding Model.Age, UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             HorizontalContentAlignment="Left"
@@ -43,7 +43,7 @@
             Height="30"
             Width="120" Margin="43,103,0,0"/>
         <Label x:Name="_lbl_Pension"
-               Content="{Binding PensionQualifiedDisplay, UpdateSourceTrigger=PropertyChanged}"
+               Content="{Binding Model.PensionQualifiedDisplay, UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             HorizontalContentAlignment="Left"
@@ -52,15 +52,18 @@
 
         <Button x:Name="_btn_AgeChange"
                 Content="Change Age"
+                Command="{Binding DoSomethingCommand, UpdateSourceTrigger=PropertyChanged}"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Margin="263,186,0,0" 
                 Height="32" 
-                Width="112"
-                Click="_btn_AgeChange_Click" />
+                Width="112"/>
         <TextBox x:Name="_tbx_Age"
+                 Text="{Binding Input_Age,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Center"
                  Height="30"
                  Width="100" Margin="158,188,0,0"/>
     </Grid>

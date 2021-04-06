@@ -30,13 +30,7 @@ namespace MVVM.View
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.vmPerson = new PersonViewModel();
-            this.DataContext = vmPerson.Model;
-        }
-
-        private void _btn_AgeChange_Click(object sender, RoutedEventArgs e)
-        {
-            int age = Convert.ToInt32(_tbx_Age.Text);
-            this.vmPerson.Model.Age = age;
+            this.DataContext = vmPerson;
         }
     }
 }
