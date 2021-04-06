@@ -4,12 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM"
+        xmlns:view="clr-namespace:MVVM.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="_lbl_MVVM"
-               Content="Hello MVVM"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Center"/>
+        <view:CtrlPerson x:Name="ctrlPerson" 
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left" Height="218" Width="418"/>
+
     </Grid>
 </Window>
