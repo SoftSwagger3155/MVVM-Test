@@ -35,4 +35,9 @@ namespace MVVM.Command
         }
         
     }
+
+    public class TestRelayCommand
+    {
+
+    }
 }
